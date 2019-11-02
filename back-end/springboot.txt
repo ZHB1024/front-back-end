@@ -1,0 +1,12 @@
+
+springboot的注解
+
+@SpringBootApplication              --启动类
+
+
+@RestController
+
+@RequestMapping
+
+@PostMapping
+@GetMapping
