@@ -1,0 +1,8 @@
+eureka:
+  client:
+    enabled: true
+logging:
+  level:
+    ROOT:info
+    com.forever:debug
+  
