@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter @Setter
 public class KeyValueVO<T,V> {
-    
+
+
     private T key;
     private V value;
     
