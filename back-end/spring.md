@@ -3,6 +3,10 @@
 
 @SpringBootApplication  --启动类
 
+@Configuration
+    --配置spring容器（应用上下文）,作用在类上
+    --相当于xml配置文件里的<beans>
+
 @RestController(value="hello")
     --控制器，作用于controller类上
     --包含@Controller + @ResponseBody
