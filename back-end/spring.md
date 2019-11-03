@@ -1,8 +1,7 @@
 
-springboot
+**springboot**
 
 @SpringBootApplication  --启动类
-
 
 @RestController(value="hello")
     --控制器，作用于controller类上
@@ -12,6 +11,7 @@ springboot
 @Controller(value="hello")
     --控制器，作用于controller类上
     --用来响应页面，必须配合模板来使用，常用的有：FreeMarker、Thymeleaf（官网推荐）、Velocity、Groovy、Jsp
+
 
 @ResponseBody
     --作用于控制器的方法上
@@ -37,4 +37,4 @@ springboot
 
 @RequestParam
     --获取请求参数的值，？号后面参数的值
-    在方法参数列表里，@RequestParam("id") Integer id
+    在方法参数列表里，@RequestParam("id") Integer id, defaultValue="World"
