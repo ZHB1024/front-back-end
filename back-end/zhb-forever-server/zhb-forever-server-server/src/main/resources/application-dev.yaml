@@ -1,12 +1,9 @@
 eureka: 
   client: 
     enbaled: true
-logging: 
-  level: 
-    ROOT: info
 zhb: 
-  forever:
-    msg: 
+  forever: 
+    ms: 
       url: http://localhost:8012
 spring: 
   datasource: 
@@ -19,6 +16,9 @@ spring:
     initialSize: 1
     maxWait: 3000
     minIdle: 1
+logging: 
+  level: 
+    ROOT: info
 
 
     

@@ -10,7 +10,7 @@ import com.forever.zhb.ms.api.MsApi;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController()
+@RestController
 @RequestMapping("/server")
 public class MsgController {
     
