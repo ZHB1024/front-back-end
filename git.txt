@@ -1,0 +1,80 @@
+﻿git status
+
+git add .
+
+ide中git切换分支
+git fetch
+
+ssh-keygen -t rsa -C "zhanghuibin@citicbank.com"
+SSH目录下看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。
+添加SSH公钥到gitlab
+
+全局变量设置
+git config --global user.name "zhanghuibin"
+git config --global user.email "zhanghuibin@citicbank.com"
+其他设置
+git config --global pull.rebase true     防止多人修改同一个文件时相互覆盖的问题
+git config --global core.autocrlf input
+http.postbuffer=2000000000
+http.lowspeedlimit=0
+http.lowspeedtime=999999
+Autocrlf也很重要，因为linux和window的换行是不同的，在你提交的时候，git会自动进行转化，这样才能保证你从windows上编辑的配置文件，到了linux上是好用的。
+
+
+Create a new repository
+可以先将项目clone到本地然后将文件拷贝到目录下面再提交上去
+git clone ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+cd PROJECTNAME
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder
+如果项目存在需要导入到gitlab可以直接将项目导入上去
+cd existing_folder
+git init
+git remote add origin ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Existing Git repository
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+git push -u origin --all
+git push -u origin --tags
+
+git diff            查看变更
+git branch -a       查看所有分支
+git checkout 分支   切换到目标分支
+git checkout -b mpdo_zhb_dev
+
+
+本地新建分支
+ git checkout -b iteration_5_zhb
+推到git库上
+ git push origin iteration_5_zhb
+ 
+ 
+
+git config --global --list
+ 
+ //合并分支到主干
+ 在master上执行
+ git merge --no-ff iteration_5_zhb
+ 将冲突的文件处理后，提交到主干
+ 
+ //拉取主干代码
+ 在分支上执行
+ git rebase master
+ 
+ 统计代码行数
+ ./stats.sh --since 2019/11/1 --until 2019/11/8 ../mpdo-web
+ 
+ 
+ 
+
+
+
