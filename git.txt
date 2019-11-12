@@ -5,13 +5,13 @@ git add .
 ide中git切换分支
 git fetch
 
-ssh-keygen -t rsa -C "zhanghuibin@citicbank.com"
+ssh-keygen -t rsa -C "zhb20111503@126.com"
 SSH目录下看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。
 添加SSH公钥到gitlab
 
 全局变量设置
 git config --global user.name "zhanghuibin"
-git config --global user.email "zhanghuibin@citicbank.com"
+git config --global user.email "zhb20111503@126.com"
 其他设置
 git config --global pull.rebase true     防止多人修改同一个文件时相互覆盖的问题
 git config --global core.autocrlf input
@@ -23,7 +23,7 @@ Autocrlf也很重要，因为linux和window的换行是不同的，在你提交�
 
 Create a new repository
 可以先将项目clone到本地然后将文件拷贝到目录下面再提交上去
-git clone ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+git clone git@github.com:ZHB1024/front-back-end.git
 cd PROJECTNAME
 touch README.md
 git add README.md
@@ -34,7 +34,7 @@ Existing folder
 如果项目存在需要导入到gitlab可以直接将项目导入上去
 cd existing_folder
 git init
-git remote add origin ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+git remote add origin git@github.com:ZHB1024/front-back-end.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
@@ -42,7 +42,7 @@ git push -u origin master
 Existing Git repository
 cd existing_repo
 git remote rename origin old-origin
-git remote add origin ssh://git@git.citicbank.com:5022/citicbank-perbank-group/PROJECTNAME.git
+git remote add origin git@github.com:ZHB1024/front-back-end.git
 git push -u origin --all
 git push -u origin --tags
 
@@ -71,7 +71,7 @@ git config --global --list
  git rebase master
  
  统计代码行数
- ./stats.sh --since 2019/11/1 --until 2019/11/8 ../mpdo-web
+ ./stats.sh --since 2019/11/1 --until 2019/11/8 ../front-back-end
  
  
  
