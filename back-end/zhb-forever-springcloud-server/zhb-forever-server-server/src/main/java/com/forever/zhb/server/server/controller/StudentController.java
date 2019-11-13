@@ -26,9 +26,9 @@ public class StudentController {
     private StudentServiceImpl studentServiceImpl;
     
     @ApiOperation("查询student by sno")
-    @ApiImplicitParam(name = "sno", value = "学号")
+    @ApiImplicitParam(name = "sno", value = "学号",  paramType="query", required = true)
     @GetMapping("/querybysno")
-    public ResponseEntity<StudentEntity> queryStudentBySno(@RequestParam(required = true)String sno){
+    public ResponseEntity<StudentEntity> queryStudentBySno(@RequestParam(name="sno",required = true)String sno){
         log.info(sno);
         StudentEntity studentEntity = studentServiceImpl.getStudentEntityBySno(sno);
         return ResponseEntity.ok(studentEntity);
