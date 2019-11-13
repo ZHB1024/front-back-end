@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-//@Configuration
-//@EnableFeignClients(basePackageClasses = { MsApi.class})
+@Configuration
+@EnableFeignClients(basePackageClasses = { MsApi.class})
 public class MsConfiguration {
     
     public MsConfiguration() {

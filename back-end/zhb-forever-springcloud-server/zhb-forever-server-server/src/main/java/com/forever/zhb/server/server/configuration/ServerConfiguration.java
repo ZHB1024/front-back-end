@@ -2,12 +2,10 @@ package com.forever.zhb.server.server.configuration;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.forever.zhb.ms.api.MsApi;
 import com.forever.zhb.ms.properties.MailProperties;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,11 +20,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Slf4j
 @Configuration
-//@EnableFeignClients(basePackages = "com.forever.zhb.ms.api")
-@EnableFeignClients(basePackageClasses =  {MsApi.class})
 @EnableConfigurationProperties({MailProperties.class})
 @EnableCaching
-@ComponentScan("com.forever.zhb")
+@ComponentScan("com.forever.zhb.server")
 public class ServerConfiguration {
     
     public ServerConfiguration() {
