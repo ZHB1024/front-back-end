@@ -1,5 +1,7 @@
 package com.forever.zhb.server.server.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,4 +35,13 @@ public class StudentController {
         StudentEntity studentEntity = studentServiceImpl.getStudentEntityBySno(sno);
         return ResponseEntity.ok(studentEntity);
     }
+    
+    @GetMapping("/findbyname")
+    public ResponseEntity<Optional<StudentEntity>> findStudentByName(@RequestParam(name="name",required = true)String name){
+        log.info(name);
+        Optional<StudentEntity> studentEntitys = studentServiceImpl.findByName(name);
+        return ResponseEntity.ok(studentEntitys);
+    }
+    
+    
 }

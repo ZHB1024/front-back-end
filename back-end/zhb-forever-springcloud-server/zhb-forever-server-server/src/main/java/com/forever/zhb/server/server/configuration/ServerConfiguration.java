@@ -1,10 +1,12 @@
 package com.forever.zhb.server.server.configuration;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.forever.zhb.ms.properties.MailProperties;
 
@@ -21,6 +23,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Slf4j
 @Configuration
 @EnableConfigurationProperties({MailProperties.class})
+@EnableJpaRepositories("com.forever.zhb.server.dao.repository")
+@EntityScan("com.forever.zhb.server.model.entity")
 @EnableCaching
 @ComponentScan("com.forever.zhb.server")
 public class ServerConfiguration {

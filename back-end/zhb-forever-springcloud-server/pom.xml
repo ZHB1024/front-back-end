@@ -82,10 +82,10 @@
     		<version>${commons-collections4-version}</version>
     	</dependency>
     	
-    	<!-- <dependency>
+    	<dependency>
     		<groupId>org.flywaydb</groupId>
     		<artifactId>flyway-core</artifactId>
-    	</dependency> -->
+    	</dependency>
     	
     	<dependency>
     		<groupId>io.springfox</groupId>
