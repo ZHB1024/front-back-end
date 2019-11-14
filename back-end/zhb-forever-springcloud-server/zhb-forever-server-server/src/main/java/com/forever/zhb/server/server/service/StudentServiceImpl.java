@@ -1,5 +1,6 @@
 package com.forever.zhb.server.server.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,15 @@ public class StudentServiceImpl {
         return studentEntity;
     }
 
-    public StudentEntity findBySno(String sno) {
+    public List<StudentEntity> findBySno(String sno) {
         return studentRepository.findBySno(sno);
     }
     
-    public Optional<StudentEntity> findByName(String name){
+    public List<StudentEntity> findByName(String name){
         return studentRepository.findByName(name);
+    }
+    
+    public Optional<StudentEntity> findBySnoAndName(String sno,String name){
+        return studentRepository.findBySnoAndName(sno,name);
     }
 }

@@ -1,5 +1,6 @@
 package com.forever.zhb.server.server.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import com.forever.zhb.server.server.service.StudentServiceImpl;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,10 +36,18 @@ public class StudentController {
         return ResponseEntity.ok(studentEntity);
     }
     
-    @GetMapping("/findbyname")
-    public ResponseEntity<Optional<StudentEntity>> findStudentByName(@RequestParam(name="name",required = true)String name){
+    @GetMapping("/findbysnoname")
+    public ResponseEntity<Optional<StudentEntity>> findStudentBySnoAndName(@RequestParam(name="name",required = true)String name,
+            @RequestParam(name="sno",required = true)String sno){
         log.info(name);
-        Optional<StudentEntity> studentEntitys = studentServiceImpl.findByName(name);
+        Optional<StudentEntity> studentEntitys = studentServiceImpl.findBySnoAndName(sno,name);
+        return ResponseEntity.ok(studentEntitys);
+    }
+    
+    @GetMapping("/findbyname")
+    public ResponseEntity<List<StudentEntity>> findStudentByName(@RequestParam(name="name",required = true)String name){
+        log.info(name);
+        List<StudentEntity> studentEntitys = studentServiceImpl.findByName(name);
         return ResponseEntity.ok(studentEntitys);
     }
     
