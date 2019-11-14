@@ -51,5 +51,10 @@ public class StudentController {
         return ResponseEntity.ok(studentEntitys);
     }
     
+    @GetMapping("/findsno")
+    public ResponseEntity<List<String>> findSnoBy(){
+        List<String> snos = studentServiceImpl.findSnoBy();
+        return ResponseEntity.ok(snos);
+    }
     
 }

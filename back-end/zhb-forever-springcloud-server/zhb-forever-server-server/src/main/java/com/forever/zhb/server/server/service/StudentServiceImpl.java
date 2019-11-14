@@ -39,4 +39,8 @@ public class StudentServiceImpl {
     public Optional<StudentEntity> findBySnoAndName(String sno,String name){
         return studentRepository.findBySnoAndName(sno,name);
     }
+    
+    public List<String> findSnoBy(){
+        return studentRepository.findSnoBy();
+    }
 }
