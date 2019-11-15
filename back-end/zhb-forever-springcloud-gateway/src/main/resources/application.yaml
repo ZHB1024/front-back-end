@@ -1,0 +1,25 @@
+server: 
+  port: 8000
+  tomcat: 
+    uri-encoding: UTF-8
+spring: 
+  application: 
+    name: zhb-forever-gateway
+  profiles: 
+    active: dev
+  cloud: 
+    gateway: 
+      routes:
+        - id: zhb-forever-server
+          uri: lb://zhb-forever-server
+          predicates: 
+            - Path=/server/**
+          filters: 
+            - StripPrefix=1
+        - id: zhb-forever-ms
+          uri: lb://zhb-forever-ms
+          predicates: 
+            - Path=/ms/**
+          filters: 
+            - StripPrefix=1
+  

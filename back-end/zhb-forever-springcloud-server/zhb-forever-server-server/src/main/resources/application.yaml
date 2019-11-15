@@ -4,7 +4,7 @@ server:
       uri-encoding: UTF-8
 spring: 
   application: 
-    name: server
+    name: zhb-forever-server
   profiles: 
     active: dev
   http: 
