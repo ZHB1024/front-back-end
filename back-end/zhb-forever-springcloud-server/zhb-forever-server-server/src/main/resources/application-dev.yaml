@@ -9,7 +9,7 @@ zhb:
     ms: 
       url: http://localhost:8012
     mail: 
-      userName:
+      userName: ZHB1024
       password: 123456
 spring: 
   datasource: 

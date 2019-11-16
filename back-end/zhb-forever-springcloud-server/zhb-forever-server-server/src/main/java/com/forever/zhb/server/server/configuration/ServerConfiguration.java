@@ -1,5 +1,6 @@
 package com.forever.zhb.server.server.configuration;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
@@ -25,6 +26,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableConfigurationProperties({MailProperties.class})
 @EnableJpaRepositories("com.forever.zhb.server.dao.repository")
 @EntityScan("com.forever.zhb.server.model.entity")
+@MapperScan("com.forever.zhb.server.mapper")
 @EnableCaching
 @ComponentScan("com.forever.zhb.server")
 public class ServerConfiguration {

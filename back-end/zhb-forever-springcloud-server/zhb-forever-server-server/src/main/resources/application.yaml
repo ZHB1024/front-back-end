@@ -24,4 +24,8 @@ logging:
     ROOT: info
   file: 
     log/server.log		
-  
+mybatis: 
+  configuration: 
+    default-fetch-size: 100
+    default-statement-timeout: 30
+  mapper-locations: classpath*:mybatis/mapper/*.xml

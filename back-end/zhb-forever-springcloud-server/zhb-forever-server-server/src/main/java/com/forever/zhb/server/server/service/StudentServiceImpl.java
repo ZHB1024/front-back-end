@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.forever.zhb.server.dao.dao.StudentDao;
 import com.forever.zhb.server.dao.repository.StudentRepository;
+import com.forever.zhb.server.mapper.StudentMapper;
+import com.forever.zhb.server.model.entity.StudentData;
 import com.forever.zhb.server.model.entity.StudentEntity;
 
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +23,9 @@ public class StudentServiceImpl {
     
     @Autowired
     private StudentRepository studentRepository;
+    
+    @Autowired
+    private StudentMapper studentMapper;
     
     public StudentEntity getStudentEntityBySno(String sno) {
         StudentEntity studentEntity = studentDao.getStudentEntityBySno(sno);
@@ -42,5 +47,9 @@ public class StudentServiceImpl {
     
     public List<String> findSnoBy(){
         return studentRepository.findSnoBy();
+    }
+    
+    public List<StudentData> queryStudentByName(String name){
+        return studentMapper.queryStudentByName(name);
     }
 }

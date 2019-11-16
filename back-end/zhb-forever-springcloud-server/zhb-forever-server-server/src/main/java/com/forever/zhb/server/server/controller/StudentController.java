@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.forever.zhb.server.model.entity.StudentData;
 import com.forever.zhb.server.model.entity.StudentEntity;
 import com.forever.zhb.server.server.service.StudentServiceImpl;
 
@@ -54,6 +55,12 @@ public class StudentController {
     @GetMapping("/findsno")
     public ResponseEntity<List<String>> findSnoBy(){
         List<String> snos = studentServiceImpl.findSnoBy();
+        return ResponseEntity.ok(snos);
+    }
+    
+    @GetMapping("/querystudentbyname")
+    public ResponseEntity<List<StudentData>> queryStudentByName(String name){
+        List<StudentData> snos = studentServiceImpl.queryStudentByName(name);
         return ResponseEntity.ok(snos);
     }
     
