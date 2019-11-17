@@ -1,0 +1,24 @@
+server:
+  port: 7001
+  tomcat:
+      uri-encoding: UTF-8
+spring:
+  application:
+    name: zhb-forever-test
+  profiles: 
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ZHB1024/front-back-end
+          search-paths: config
+          username: ZHB1024
+          password: zhb901024
+logging:
+  level:
+    ROOT: info
+    com.forever: debug
+  file:
+    log/zhb-forever-config.log		
+  
