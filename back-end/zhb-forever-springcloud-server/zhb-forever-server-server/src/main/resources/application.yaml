@@ -19,6 +19,15 @@ spring:
     baseline-on-migrate: true
     baseline-version: 0
     table: flyway_schema_history_server
+  cloud: 
+    config: 
+      uri: http://localhost:7001/
+      profile: dev
+      label: master
+      fail-fast: true
+management:
+  security:
+    enabled: false
 logging: 
   level: 
     ROOT: info
