@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 8010
   tomcat:
       uri-encoding: UTF-8
 spring:
@@ -12,7 +12,7 @@ spring:
       server:
         git:
           uri: https://github.com/ZHB1024/front-back-end
-          search-paths: config
+          searchPaths: config
           basedir: D:/java/code/temp
           username: ZHB1024
           password: ZHB1024
