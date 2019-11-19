@@ -29,3 +29,6 @@ mybatis:
     default-fetch-size: 100
     default-statement-timeout: 30
   mapper-locations: classpath*:mybatis/mapper/*.xml
+feign: 
+  hystrix: 
+    enabled: true
