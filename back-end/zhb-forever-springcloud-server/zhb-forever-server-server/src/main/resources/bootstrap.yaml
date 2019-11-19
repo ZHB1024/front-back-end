@@ -1,24 +1,4 @@
-server: 
-  port: 8011
-  tomcat: 
-      uri-encoding: UTF-8
 spring: 
-  application: 
-    name: zhb-forever-server
-  profiles: 
-    active: dev
-  http: 
-    multipart: 
-      enabled: true
-      max-file-size: 50MB
-      max-request-size: 50MB
-  main: 
-    allow-bean-definition-overriding: true
-  flyway:
-    locations: classpath:db
-    baseline-on-migrate: true
-    baseline-version: 0
-    table: flyway_schema_history_server
   cloud: 
     config: 
       discovery:
