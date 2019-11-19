@@ -35,3 +35,7 @@ spring:
 management:
   security:
     enabled: false
+  endpoints: 
+    web: 
+      exposure: 
+        include: refresh,health,info

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RefreshScope
 @RestController
 @RequestMapping("/configserver")
+@RefreshScope
 public class ConfigServerController {
     
     @Value("${spring.application.name.first}")
