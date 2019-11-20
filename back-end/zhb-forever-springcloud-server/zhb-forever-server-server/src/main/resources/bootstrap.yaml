@@ -1,4 +1,6 @@
 spring: 
+  application: 
+    name: zhb-forever-server
   cloud: 
     config: 
       discovery:
