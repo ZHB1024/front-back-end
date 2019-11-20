@@ -29,12 +29,7 @@ server:
     locations: classpath:db
     baseline-on-migrate: true
     baseline-version: 0
-    table: flyway_schema_history_server
-logging: 
-  level: 
-    ROOT: info
-  file: 
-    log/zhb-forever-server.log		
+    table: flyway_schema_history_server		
 mybatis: 
   configuration: 
     default-fetch-size: 100
@@ -52,4 +47,6 @@ zhb:
       password: 123456
 logging: 
   level: 
-    ROOT: inf
+    ROOT: info
+  file: 
+    log/zhb-forever-server.log
