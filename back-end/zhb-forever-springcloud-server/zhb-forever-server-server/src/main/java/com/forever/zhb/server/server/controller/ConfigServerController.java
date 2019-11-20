@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @RefreshScope
 public class ConfigServerController {
     
-    @Value("${spring.application.name.first}")
+    @Value("${server.port}")
     private String springApplicationName;
     
     @RequestMapping("/springappname")
