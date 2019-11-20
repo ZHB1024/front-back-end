@@ -1,3 +1,7 @@
+server: 
+  port: 8011
+  tomcat: 
+      uri-encoding: UTF-8
 eureka: 
   client: 
     enbaled: true
@@ -14,10 +18,6 @@ spring:
     initialSize: 1
     maxWait: 3000
     minIdle: 1o
-server: 
-  port: 8011
-  tomcat: 
-      uri-encoding: UTF-8
   http: 
     multipart: 
       enabled: true
