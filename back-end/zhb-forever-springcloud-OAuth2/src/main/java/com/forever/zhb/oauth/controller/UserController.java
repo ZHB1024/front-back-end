@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class UserController {
     
+    @RequestMapping(value="/user",produces="application/json")
     public Map<String, Object> user(OAuth2Authentication user){
         if (null == user) {
             log.error("authority user is null");
