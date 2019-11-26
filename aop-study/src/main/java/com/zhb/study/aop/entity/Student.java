@@ -5,8 +5,19 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-public class Student {
+public class Student implements BaseInterface{
+    
+    public static String sno = "2011";
+    
+    static {
+        System.out.println("this is Student static code ");
+    }
 
-    private final String name;
-    private final int age;
+    private  String name;
+    private  int age;
+    
+    @Override
+    public void doing() {
+        System.out.println("student is studing...");
+    }
 }
