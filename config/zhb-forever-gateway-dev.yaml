@@ -1,10 +1,4 @@
-server: 
-  port: 8000
-  tomcat: 
-    uri-encoding: UTF-8
 spring: 
-  application: 
-    name: zhb-forever-gateway
   cloud: 
     gateway: 
       routes:
