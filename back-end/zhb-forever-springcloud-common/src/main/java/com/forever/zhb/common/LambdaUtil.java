@@ -13,16 +13,20 @@ private static List<String> lists = Arrays.asList("zhanghuibin","wanglingxu","zh
         if (Objects.nonNull(listsTs)) {
             listsTs.forEach(System.out::println);
         }
-        
     }
 
     public static void main(String[] args) {
+        //distinct();
+        compare();
+    }
+    
+    private static void distinct() {
         List<String> vlaue1 = lists.stream().distinct().collect(Collectors.toList());
         print(vlaue1);
-        
-        vlaue1 = lists.stream().sorted((v1,v2) -> v1.compareTo(v2)).collect(Collectors.toList());
-        print(vlaue1);
-        
-        
+    }
+    
+    private static void compare() {
+        List<String> vlaue = lists.stream().sorted((v1,v2) -> v1.compareTo(v2)).collect(Collectors.toList());
+        print(vlaue);
     }
 }
