@@ -1,5 +1,6 @@
 package com.forever.zhb.common;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
@@ -15,11 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ResourceLoaderUtil {
     
-    private static final String APPLICATION_RESOURCE_LOCATION = "application.yaml";
+    private static final String APPLICATION_RESOURCE_LOCATION = "app.property";
+    private static final String SYSTEM_ENV_PATH = "propertyPath";
     
     public static void main(String[] args) throws IOException {
         
-        loadResources(APPLICATION_RESOURCE_LOCATION);
+        //loadResources(APPLICATION_RESOURCE_LOCATION);
+        loadSystemResources();
     }
     
     private static void loadResources(String resourcePath) throws IOException {
@@ -37,6 +40,23 @@ public class ResourceLoaderUtil {
                     }
                 }
             }
+        }
+    }
+    
+    private static void loadSystemResources() {
+        String path = System.getenv(SYSTEM_ENV_PATH);
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(path);
+            Properties properties = new Properties();
+            properties.load(fileInputStream);
+            for(Map.Entry<?, ?> entry : properties.entrySet()) {
+                String name = (String)entry.getKey();
+                String value = (String)entry.getValue();
+                log.info(name + ":" + value);
+            }
+        } catch (IOException e) {
+            log.error(e.getMessage(),e);
         }
     }
 
