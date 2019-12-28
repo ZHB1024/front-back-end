@@ -1,5 +1,8 @@
 package com.forever.zhb.common;
 
+import java.util.List;
+import java.util.Objects;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,6 +25,12 @@ public class PrintUtil {
     public static <T> void println(T[] object) {
         for (T t : object) {
             System.out.println(t + ", ");
+        }
+    }
+    
+    public static <T> void  print(List<T> listsTs) {
+        if (Objects.nonNull(listsTs)) {
+            listsTs.forEach(o -> System.out.println(o.toString()));
         }
     }
 
