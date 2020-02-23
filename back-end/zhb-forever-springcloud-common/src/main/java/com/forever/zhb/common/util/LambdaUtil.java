@@ -1,4 +1,4 @@
-package com.forever.zhb.common;
+package com.forever.zhb.common.util;
 
 import java.util.Arrays;
 import java.util.Collections;

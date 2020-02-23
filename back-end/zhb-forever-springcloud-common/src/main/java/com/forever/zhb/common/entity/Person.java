@@ -3,7 +3,7 @@ package com.forever.zhb.common.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.forever.zhb.common.RandomUtil;
+import com.forever.zhb.common.util.RandomUtil;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
