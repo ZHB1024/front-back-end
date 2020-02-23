@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  tomcat:
+      uri-encoding: UTF-8
+spring:
+  application:
+    name: java-study
+  profiles:
+    active: dev
+logging:
+  level:
+    ROOT: info
+    com.forever: debug
+  file:
+    log/java-study.log
