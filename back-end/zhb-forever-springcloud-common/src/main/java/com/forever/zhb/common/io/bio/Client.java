@@ -1,4 +1,4 @@
-package com.forever.zhb.common.bio;
+package com.forever.zhb.common.io.bio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.forever.zhb.common.bio.task.ClientRunnable;
+import com.forever.zhb.common.io.bio.task.ClientRunnable;
 
 public class Client {
 

@@ -1,4 +1,4 @@
-package com.forever.zhb.common.bio;
+package com.forever.zhb.common.io.bio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
