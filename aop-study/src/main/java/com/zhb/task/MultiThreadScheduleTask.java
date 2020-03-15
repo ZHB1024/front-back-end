@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class MultiThreadScheduleTask {
     
     @Async
-    @Scheduled(cron = "0 11 20 * * ?")  //间隔1秒
+    @Scheduled(cron = "0 26 10 * * ?")  //间隔1秒
     public void first() throws InterruptedException {
         System.out.println("第一个定时任务开始 : " + LocalDateTime.now().toLocalTime() + "\r\n线程 : " + Thread.currentThread().getName());
     }
