@@ -21,7 +21,7 @@ public class Client {
     public static void main(String[] args) {
         ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 2, 5, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
         pool.execute(new ClientRunnable("client1-", nums));
-        pool.execute(new ClientRunnable("client2-", nums));
+        //pool.execute(new ClientRunnable("client2-", nums));
         pool.shutdown();
     }
 

@@ -5,15 +5,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MainTest {
+    public MainTest() {}
+    public void MainTest(String name) {}
+    private static int x = 100;
 
     public static void main(String[] args) throws IOException {
-        readLine();
-        
+        //readLine();
+        Integer  a = 1024;
+        Integer b = new Integer(1024);
+        Integer c = 1024;
+        int d = 1024;
+        System.out.print(c == d);
 
     }
     
     
-    public static void readChar() throws IOException {
+    public static final void readChar() throws IOException {
         System.out.println("请输入一个字符");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         char c ;
