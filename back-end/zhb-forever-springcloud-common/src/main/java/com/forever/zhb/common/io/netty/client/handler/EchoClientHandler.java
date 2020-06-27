@@ -1,4 +1,4 @@
-package com.forever.zhb.common.io.nio.client.handler;
+package com.forever.zhb.common.io.netty.client.handler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

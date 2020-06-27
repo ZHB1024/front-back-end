@@ -1,6 +1,6 @@
-package com.forever.zhb.common.io.nio.server;
+package com.forever.zhb.common.io.netty.server;
 
-import com.forever.zhb.common.io.nio.server.handler.EchoServerHandler;
+import com.forever.zhb.common.io.netty.server.handler.EchoServerHandler;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

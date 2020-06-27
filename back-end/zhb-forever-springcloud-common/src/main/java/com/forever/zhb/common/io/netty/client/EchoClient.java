@@ -1,8 +1,8 @@
-package com.forever.zhb.common.io.nio.client;
+package com.forever.zhb.common.io.netty.client;
 
 import java.net.InetSocketAddress;
 
-import com.forever.zhb.common.io.nio.client.handler.EchoClientHandler;
+import com.forever.zhb.common.io.netty.client.handler.EchoClientHandler;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
