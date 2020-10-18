@@ -26,7 +26,7 @@ public class Example {
     private static void listIterator() {
         List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
         
-        //.forEach(value->System.out.println(value));
+        //features.forEach(value->System.out.println(value));
         //features.forEach(System.out::println);
         
         //filter(features, value->value.contains("API"));
