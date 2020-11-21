@@ -26,16 +26,16 @@ public class Example {
     private static void listIterator() {
         List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
         
-        //features.forEach(value->System.out.println(value));
-        //features.forEach(System.out::println);
+        features.forEach(value->System.out.println(value));
+        features.forEach(System.out::println);
         
-        //filter(features, value->value.contains("API"));
+        filter(features, value->value.contains("API"));
         
         Predicate<String> contain = value->value.contains("API");
         List<String> temps = features.stream().filter(contain).collect(Collectors.toList());
         //System.out.println(temps.toString());
         
-        //features.stream().map(value->value.concat("123")).forEach(System.out::println);
+        features.stream().map(value->value.concat("123")).forEach(System.out::println);
         
         //features.stream().reduce(value->valu).get();
         
