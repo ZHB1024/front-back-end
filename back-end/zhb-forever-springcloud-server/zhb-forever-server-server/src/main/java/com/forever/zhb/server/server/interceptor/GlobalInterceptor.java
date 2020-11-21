@@ -9,6 +9,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class GlobalInterceptor implements HandlerInterceptor {
 
@@ -18,11 +21,13 @@ public class GlobalInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
+        log.info("begin globalInterceptor");
         String secretKey = request.getHeader("from");
         if(!StringUtils.isNotBlank(secretKey)|| !secretKey.equals("gateway")){
+            log.error("sercreKey 【from】 is null" );
             response.setContentType("application/json; charset=utf-8");
             PrintWriter writer = response.getWriter();
-            writer.write("error");
+            writer.write("globalInterceptor parame [from] is null");
             return false;
         }
         return true;
