@@ -8,22 +8,20 @@ import ognl.OgnlContext;
 import ognl.OgnlException;
 
 public class RandomUtil {
-
-    private static Random random = new Random();
-    
-    private static final String[] names = {"张三","李四","王五","麻子","习近平"
-            ,"毛泽东","周恩来","邓小平","江泽民","朱镕基"
-            ,"彭丽媛","李开复","雷军","小米","apple"
+	
+	private static Random random = new Random();
+	
+	private static final String[] names = {"李开复","雷军","小米","apple"
             ,"任正非","华为","中兴","马云","马化腾"};
-    private static final String[] sexs = {"男","女"};
-    
-    public static String getRandomUUID() {
+	private static final String[] sexs = {"男","女"};
+	
+	public static String getRandomUUID() {
         String uuid = UUID.randomUUID().toString();
         uuid = uuid.replace("-", "");
         return uuid;
     }
-    
-    public static String randomName(int i){
+	
+	public static String randomName(int i){
         int index = random.nextInt(19);
         return names[index] + i;
     }
@@ -36,8 +34,8 @@ public class RandomUtil {
         int index = random.nextInt(1);
         return sexs[index];
     }
-    
-    public static String getRandomNumbers(int length) {
+	
+	public static String getRandomNumbers(int length) {
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < length; ++i) {
@@ -46,8 +44,8 @@ public class RandomUtil {
         }
         return sb.toString();
     }
-    
-    public static String getRandomString(int length) {
+	
+	public static String getRandomString(int length) {
         String base = "0123456789abcdefghijklmnopqrstuvwxyz";
         int baseLength = base.length();
         StringBuffer sb = new StringBuffer();
@@ -57,8 +55,8 @@ public class RandomUtil {
         }
         return sb.toString();
     }
-    
-    public static String getRandomCaseSensitiveString(int length) {
+	
+	public static String getRandomCaseSensitiveString(int length) {
         String base = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int baseLength = base.length();
         StringBuffer sb = new StringBuffer();
@@ -160,7 +158,7 @@ public class RandomUtil {
     }
     
     /**
-             * 计算表达式
+     * 计算表达式
      * @param expressionString
      * @return
      * @throws OgnlException
@@ -170,5 +168,6 @@ public class RandomUtil {
         Object expression = Ognl.parseExpression(expressionString);
         return (Integer) Ognl.getValue(expression, ctx, (Object)null);
     }
+
 
 }
