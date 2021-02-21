@@ -33,6 +33,7 @@ public class EchoServer {
                     });
             ChannelFuture future = server.bind().sync();
             future.channel().closeFuture().sync();
+            future.channel().eventLoop().shutdownGracefully();
         } finally {
             group.shutdownGracefully().sync();
         }
