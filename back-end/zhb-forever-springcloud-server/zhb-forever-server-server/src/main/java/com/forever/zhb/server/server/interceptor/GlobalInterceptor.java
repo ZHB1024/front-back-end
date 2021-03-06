@@ -23,7 +23,7 @@ public class GlobalInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
         log.info("begin globalInterceptor");
         String secretKey = request.getHeader("from");
-        if(!StringUtils.isNotBlank(secretKey)|| !secretKey.equals("gateway")){
+        if(StringUtils.isBlank(secretKey)|| !secretKey.equals("gateway")){
             log.error("sercreKey 【from】 is null" );
             response.setContentType("application/json; charset=utf-8");
             PrintWriter writer = response.getWriter();
