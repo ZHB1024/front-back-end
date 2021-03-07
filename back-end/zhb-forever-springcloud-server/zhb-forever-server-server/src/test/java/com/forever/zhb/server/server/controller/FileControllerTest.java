@@ -24,7 +24,7 @@ public class FileControllerTest extends BaseTest {
         System.out.println("---------");
         String result =  mockMvc.perform(
                 MockMvcRequestBuilders
-                    .fileUpload("/file/upload")
+                    .multipart("/file/upload")
                     .file(
                         new MockMultipartFile("files", "test.yaml", ",multipart/form-data", "hello upload".getBytes("UTF-8"))
                     )
